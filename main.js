@@ -104,14 +104,24 @@ window.addEventListener("scroll", () => {
 
 const form = document.querySelector("form");
 
-form.addEventListener("submit", function (e) {
-
+form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    alert("Thank you! Your message has been received.");
+    const formData = new FormData(form);
 
-    form.reset();
+    const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    });
 
+    const result = await response.json();
+
+    if (result.success) {
+        alert("✅ Message sent successfully!");
+        form.reset();
+    } else {
+        alert("❌ Failed to send message.");
+    }
 });
 
 
