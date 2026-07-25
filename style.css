@@ -174,6 +174,40 @@ section{
     margin-bottom:15px;
 }
 
+#team {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.team-card {
+    background: #1f2a44;
+    padding: 25px;
+    width: 280px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+}
+
+.team-card h3 {
+    color: #3bb9ff;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    color: #ddd;
+}
+
 .project-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
